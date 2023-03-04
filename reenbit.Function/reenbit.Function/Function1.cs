@@ -2,12 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.Azure.Storage.Blob;
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using reenbit.Function.Options;
 using reenbit.Function.Services;
 
 namespace reenbit.Function;

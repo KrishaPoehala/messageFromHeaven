@@ -1,10 +1,6 @@
 {
     "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=angelasblob;AccountKey=bO1CB4hw1vGmASWDna6eFuEZEHv8Wt1rUeDqtixJd1eVRK/WLzhrSfvEvXPRmagY8mX4SOWPWlVv+AStFLJRGQ==;BlobEndpoint=https://angelasblob.blob.core.windows.net/;TableEndpoint=https://angelasblob.table.core.windows.net/;QueueEndpoint=https://angelasblob.queue.core.windows.net/;FileEndpoint=https://angelasblob.file.core.windows.net/",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
-     "EmailSendOptions:HostName": "smtp.gmail.com",
-     "EmailSendOptions:Port": 587,
-     "EmailSendOptions:FromEmail": "kovalikn6@gmail.com"
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet"
   }
 }
