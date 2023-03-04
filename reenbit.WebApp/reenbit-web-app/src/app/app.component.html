@@ -1,0 +1,53 @@
+
+<div class="container">
+  <form class="form"  [formGroup]="fileForm">
+    <div class="success" *ngIf="result === responseType.Success"
+    >The file is successfully uploaded! Await for the email from heaven :D
+  </div>
+
+  <div *ngIf="result === responseType.InProgress" class="d-flex">
+      Sending the message and putting it into blob storage...
+  </div>
+
+  <div *ngIf="result === responseType.Error" class="danger">
+    Something went wrong please try again!
+  </div>
+
+  <div *ngIf="result === responseType.Canceled" class="warning">
+    The operation was canceled.
+  </div>
+  <hr *ngIf="result"/>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email"
+      formControlName="email">
+      <div *ngIf="this.fileForm.get('email')!.touched || this.fileForm.get('email')!.dirty || submited">
+        <div *ngIf="this.fileForm.get('email')?.getError('required')"
+        class="danger">
+          Email is required
+        </div>
+        <div *ngIf="this.fileForm.get('email')?.getError('email')"
+        class="danger">
+          Wrong format!
+        </div>
+      </div>
+    </div>
+    <div class="form-group file-input-container">
+      {{fileName || 'File name'}}
+      <img src="../assets/attach.svg" class="attach-input-img" alt=""
+      (click)="fileUpload.click()">
+      <input  #fileUpload
+       class="file-input" type="file" accept=".docx" (change)="onFileChange($event)"
+      />
+      <div *ngIf="!file && submited" class="danger">
+        File is required
+      </div>
+    </div>
+    <div class="buttons-container">
+      <button type="submit" class="btn" (click)="onSubmit()"
+      [disabled]="result == responseType.InProgress">Submit</button>
+      <button type="submit" class="btn-danger" (click)="onCancel()"
+      [disabled]="result === null || result !== responseType.InProgress">Cancel</button>
+    </div>
+  </form>
+</div>

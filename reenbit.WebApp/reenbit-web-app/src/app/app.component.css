@@ -1,0 +1,130 @@
+
+.file-input{
+    display: none;
+}
+.attach-input-img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+} 
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+.form {
+    border: 1px solid #ddd;
+    padding: 20px;
+    width: 400px;
+}
+  
+.form-group {
+    margin-bottom: 15px;
+}
+  
+  label {
+    font-weight: bold;
+  }
+  
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+  
+.form-control:focus {
+    outline: 0;
+    box-shadow: none;
+    border-color: #80bdff;
+}
+  
+.form-control-file {
+    display: block;
+    width: 100%;
+}
+  
+.file-input-container{
+    width: 100%;
+    margin: 0 auto; 
+}
+
+.buttons-container{
+    display: flex;
+    margin-top: 10px;
+    justify-content:space-between;
+}
+.btn-danger:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+    cursor:default;
+}
+
+  .btn, .btn-danger {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    user-select: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: all .15s ease-in-out;
+  }
+
+  .btn{
+    background-color: #007bff;
+    border: 1px solid #007bff;
+  }
+
+  .btn-danger{
+    border: 1px solid #dc4e1b;
+    background-color:#fc0606 ;
+  }
+
+  .warning{
+    color:rgba(169, 169, 50, 0.434);
+  }
+  
+  .danger{
+    color:red;
+  }
+  
+  .success{
+    background-color: aquamarine;
+  }
+
+.btn-danger:hover{
+        background-color: #dc4e1b;
+    border-color: #fc0606;
+}
+.btn:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+  
+.btn,.btn-danger:focus {
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn:focus{
+    border-color: #007bff;
+}
+
+.btn-danger:focus{
+    border-color: red;
+}
