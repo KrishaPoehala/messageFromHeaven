@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reenbit.WebApi", "reenbit.WebApi\reenbit.WebApi.csproj", "{0A8C7D41-0F34-482C-9DAC-FE27B09B68B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "reenbit.WebApi", "reenbit.WebApi\reenbit.WebApi.csproj", "{0A8C7D41-0F34-482C-9DAC-FE27B09B68B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reenbit.Application", "reenbit.Application\reenbit.Application.csproj", "{073F3946-6760-4DDA-9B8B-8A756630ECF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reenbit.Infrastructure", "reenbit.Infrastructure\reenbit.Infrastructure.csproj", "{47011A41-6B4D-4D07-8ACE-2F98D5CCB94B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0A8C7D41-0F34-482C-9DAC-FE27B09B68B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A8C7D41-0F34-482C-9DAC-FE27B09B68B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A8C7D41-0F34-482C-9DAC-FE27B09B68B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{073F3946-6760-4DDA-9B8B-8A756630ECF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073F3946-6760-4DDA-9B8B-8A756630ECF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073F3946-6760-4DDA-9B8B-8A756630ECF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073F3946-6760-4DDA-9B8B-8A756630ECF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47011A41-6B4D-4D07-8ACE-2F98D5CCB94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47011A41-6B4D-4D07-8ACE-2F98D5CCB94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47011A41-6B4D-4D07-8ACE-2F98D5CCB94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47011A41-6B4D-4D07-8ACE-2F98D5CCB94B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

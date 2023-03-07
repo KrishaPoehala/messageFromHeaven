@@ -1,7 +1,7 @@
 using Azure.Storage.Blobs;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using reenbit.WebApi.Options;
+using reenbit.Application.Interfaces;
 
 namespace reenbit.WebApi.Controllers
 {
@@ -9,10 +9,10 @@ namespace reenbit.WebApi.Controllers
     [Route("[controller]")]
     public class FilesController : ControllerBase
     {
-        private readonly FileUploadOptions _options;
-        public FilesController(IOptions<FileUploadOptions> options)
+        private readonly IFileLoader _fileLoader;
+        public FilesController(IFileLoader fileLoader)
         {
-            _options = options.Value;
+            _fileLoader = fileLoader;
         }
 
 
@@ -22,18 +22,13 @@ namespace reenbit.WebApi.Controllers
         public async Task<IActionResult> Upload(string email,CancellationToken cancellationToken = default)
         {
             var files = await Request.ReadFormAsync(cancellationToken);
-            var file = files.Files[0];
-            var blobName = file.FileName;
-            var client = new BlobServiceClient(_options.ConnectionString);
-            var containerClient = client.GetBlobContainerClient(_options.ContainerName);
-            var blobClient = containerClient.GetBlobClient(blobName);
-            var metadata = new Dictionary<string, string>
+            if (!files.Files.Any())
             {
-                { "email", email }
-            };
+                return NotFound();
+            }
 
-            await blobClient.UploadAsync(file.OpenReadStream(), true,cancellationToken);
-            await blobClient.SetMetadataAsync(metadata,null, cancellationToken);
+            var file = files.Files[0];
+            await _fileLoader.LoadFile(email, file, cancellationToken);
             return Ok();
         }
     }

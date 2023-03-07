@@ -1,3 +1,6 @@
+
+using reenbit.Application.Interfaces;
+using reenbit.Infrastructure.Services;
 using reenbit.WebApi.Options;
 
 var origins = new string[] { "http://http://localhost:4200" };
@@ -17,7 +20,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.Configure<FileUploadOptions>(builder.Configuration.GetSection("FileUploadOptions"));
+builder.Services.AddOptions<FileUploadOptions>()
+    .Bind(builder.Configuration.GetSection("FileUploadOptions"));
+builder.Services.AddScoped<IFileLoader, FileLoader>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
