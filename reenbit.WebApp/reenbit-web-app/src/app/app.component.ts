@@ -65,7 +65,6 @@ export class AppComponent {
   onCancel(){
     this.request?.unsubscribe();
     this.result = ResponseType.Canceled;
-    setTimeout(() => this.result = null,3000);
   } 
 
   private _reset(){

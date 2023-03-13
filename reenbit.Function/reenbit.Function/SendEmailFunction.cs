@@ -9,15 +9,15 @@ using reenbit.Function.Services;
 namespace reenbit.Function;
 
 [StorageAccount("AzureWebJobsStorage")]
-public class Function1
+public class SendEmailFunction
 {
     private readonly IEmailSender _sender;
-    public Function1(IEmailSender sender)
+    public SendEmailFunction(IEmailSender sender)
     {
         _sender = sender;
     }
 
-    [FunctionName("Function1")]
+    [FunctionName("SendEmailFunction")]
     public async Task Run([BlobTrigger("reenbit-container/{name}")]
     Stream myBlob,IDictionary<string,string> metadata, string name, ILogger log)
     {
